@@ -1,4 +1,4 @@
-package corespringsecurity.corespringsecurity.config;
+package corespringsecurity.corespringsecurity.config.userDetailManager;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,11 +22,11 @@ public class UserDetailManagerConfig {
 
         UserDetails manager = User.withUsername("manager")
                 .password(password)
-                .roles("MANAGER").build();
+                .roles("MANAGER","USER").build();
 
         UserDetails admin = User.withUsername("admin")
                 .password(password)
-                .roles("ADMIN").build();
+                .roles("ADMIN","USER","MANAGER").build();
 
         InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
         inMemoryUserDetailsManager.createUser(user);

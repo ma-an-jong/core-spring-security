@@ -1,4 +1,4 @@
-package corespringsecurity.corespringsecurity.config;
+package corespringsecurity.corespringsecurity.config.passwordEncoder;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
