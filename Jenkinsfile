@@ -1,5 +1,5 @@
 def component = [
-		Login-Service: false,
+		LoginService: false,
 		Nginx: false
 ]
 pipeline {
