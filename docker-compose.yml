@@ -1,32 +1,8 @@
-version: '3.0'
+version: "3"
 services:
-  mysql:
-    container_name: mysql-container
-    image: maanjong/login-service:mysql
-    restart: always
-    volumes:
-      - ./db/:/docker-entrypoint-initdb.d/
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: alswhd11
-      MYSQL_ROOT_USER: root
-  web:
-    image: maanjong/login-service:0.8
-    restart: always
-    depends_on:
-      - mysql
-    ports:
-      - "8888:8888"
+  login-service:
+    build: ./
+    container_name: login-service
   nginx:
-    image: maanjong/login-service:nginx
-    ports:
-      - "80:80"
-networks:
-  default:
-    external:
-      name: my-network
-
-volumes:
-  db_data:
-    external: true
+    build: ./nginx
+    container_name: nginx
