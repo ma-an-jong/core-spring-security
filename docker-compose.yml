@@ -1,7 +1,7 @@
-version: "3"
+version: "3.0"
 services:
-  login-service:
-    build: ./
+  loginservice:
+    build: .
     container_name: login-service
   nginx:
     build: ./nginx
