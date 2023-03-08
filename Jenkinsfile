@@ -1,6 +1,6 @@
 def component = [
-		LoginService: false,
-		Nginx: false
+		LoginService: true,
+		Nginx: true
 ]
 pipeline {
 	agent any
